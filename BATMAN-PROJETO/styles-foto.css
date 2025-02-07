@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+/* Variáveis CSS */
+:root {
+    --primary-color: #fe5804;
+    --text-color: #9c9a99;
+    --border-color: rgb(234, 121, 0);
+    --transition-default: all 0.3s ease;
+    --glow-shadow: 0 0 50px var(--primary-color), inset 0 0 15px var(--primary-color);
+    --text-shadow: 0 0 50px var(--text-color);
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Estilos base */
+body {
+    background-image: url('https://a-static.besthdwallpaper.com/the-batman-2022-robert-pattinson-batman-zoe-kravitz-catwoman-wallpaper-2880x1800-92777_8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    padding: 20px;
+}
+
+/* Header e título */
+header {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: clamp(28px, 5vw, 40px);
+    padding: 15px 30px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    transition: var(--transition-default);
+}
+
+h1:hover {
+    box-shadow: var(--glow-shadow);
+    text-shadow: var(--text-shadow);
+}
+
+/* Container da galeria */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Items da galeria */
+.gallery-items {
+    position: relative;
+    aspect-ratio: 16/9;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.gallery-items:hover {
+    transform: scale(1.09);
+}
+
+.gallery-items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        height: 120px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 15px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Suporte para telas ultrawide */
+@media (min-width: 1921px) {
+    .gallery-container {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 2400px;
+    }
+}
+
+/* Suporte para dispositivos em modo paisagem */
+@media (orientation: landscape) and (max-height: 500px) {
+    header {
+        height: 100px;
+    }
+
+    .gallery-items {
+        aspect-ratio: 21/9;
+    }
+}

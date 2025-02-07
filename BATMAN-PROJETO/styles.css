@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: black;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+nav {
+    width: 60%;
+}
+
+ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+a {
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 19px;
+    transition: .3s;
+}
+
+a:hover {
+    color: #D21617;
+}
+
+#logo {
+    width: 120px;
+    height: auto;
+} 
+
+#banner {
+    background-image: url('https://www.quickpartitions.com/diaporama/the-batman.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+}
+
+#trailer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.content {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trailer {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+#sinopse {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o botão horizontalmente */
+}
+
+
+.description {
+    color: #fff;
+    font-size: 19px;
+    width: 100%;
+}
+
+.button {
+    width: 200px;
+    height: 60px;
+    background-color: #D21617;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .8s;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: none;
+    margin-top: 25px;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.actor-cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.cards-content {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 80px;
+    max-width: 1200px;
+}
+
+.card {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+.banner-1 {
+    background-image: url('https://wallpapercave.com/wp/wp5784416.jpg');
+}
+.banner-2 {
+    background-image: url('https://i.pinimg.com/originals/0a/a6/61/0aa66140c3d0bde86a8de619f1bf11da.png');
+}
+.banner-3 {
+    background-image: url('https://i.pinimg.com/originals/37/09/75/37097595bb27e83ac8acb0b102fe1c37.jpg');
+}
+.banner-4{
+    background-image: url('https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2022/02/01/582543022-the-batman-2022s-the-riddler-in-an-all-green-look-with-a-mask.jpeg');
+}
+/* Estilos específicos para os banners */
+.banner-1, .banner-2, .banner-3, .banner-4 {
+    max-width: 400px; /* Define um tamanho máximo para os banners */
+    width: 100%; /* Permite que eles sejam responsivos */
+    margin: 0 auto; /* Centraliza em telas grandes */
+    
+}
+
+footer {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+span {
+    color: #fff;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.banner-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media (min-width: 1025px) {
+    .cards-content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .footer-navigation {
+        display: block;
+    }
+    #sinopse{
+        margin: auto;
+    }
+    #banner {
+        background-position: center;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        max-width: 700px;
+    }
+    
+    .trailer {
+        max-width: 700px;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+    .banner-1, .banner-2, .banner-3, .banner-4 {
+        max-width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px){
+    .cards-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header {
+        flex-direction: row;
+        height: auto;
+        padding: 10px 10px;
+    }
+    
+    #logo {
+        width: 100px;
+    }
+    #banner {
+        height: 400px;
+    }
+    #sinopse{
+        margin: auto;
+    }
+    .button {
+        width: 100%;
+    }
+    .trailer {
+        max-width: 700px; 
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        max-width: 700px;
+    }
+    .banner-1, .banner-2, .banner-3, .banner-4 {
+        max-width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    #banner {
+        height: 400px;
+    }
+    #sinopse{
+        margin: auto;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .button {
+        font-size: 16px;
+    }
+    .card {
+        height: 400px;
+    }
+    .trailer {
+        max-width: 100%;
+    }
+    
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+/* Reset e variáveis */
+:root {
+    --primary-color: #fe5804;
+    --text-color: #8e9b9e;
+    --bg-dark: #23373b;
+    --border-color: rgb(234, 121, 0);
+    --transition-default: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0; /* Corrigido o 'o' para '0' */
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Estilos base */
+body {
+    background-image: url('https://wallpapercrafter.com/desktop/69719-robert-pattison-batman-2021-movies-movies-hd-4k-artstation-superheroes.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    padding: 20px;
+}
+
+/* Título */
+.title {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 15px;
+    color: var(--text-color);
+    font-size: clamp(28px, 5vw, 40px); /* Responsivo */
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    justify-content: center;
+    transition: var(--transition-default);
+}
+
+.title:hover {
+    box-shadow: 0 0 50px var(--primary-color), inset 0 0 15px var(--primary-color);
+    text-shadow: 0 0 50px var(--text-color);
+}
+
+/* Área de comentários */
+#mensagem {
+    display: block; /* Alterado de flex para block */
+    width: 100%;
+    max-width: 1200px;
+    min-height: 150px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid var(--primary-color);
+    background: var(--bg-dark);
+    color: #fff;
+    font-size: clamp(16px, 3vw, 20px);
+    font-family: inherit;
+    border-radius: 10px;
+    transition: var(--transition-default);
+    resize: vertical;
+}
+
+#mensagem:hover {
+    box-shadow: 0 0 50px var(--primary-color), inset 0 0 15px var(--primary-color);
+}
+
+/* Botão */
+.button {
+    display: inline-flex;
+    width: clamp(120px, 30%, 150px);
+    height: 50px;
+    font-size: clamp(18px, 4vw, 25px);
+    border: 2px solid var(--border-color);
+    background: var(--bg-dark);
+    margin: 20px 0;
+    border-radius: 7px;
+    color: var(--text-color);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-default);
+}
+
+.button:hover {
+    transform: scale(1.09);
+    box-shadow: 0 0 50px var(--primary-color), inset 0 0 15px var(--primary-color);
+    text-shadow: 0 0 50px var(--text-color);
+}
+
+/* Range input */
+.ranger {
+    display: block;
+    margin: 15px 0;
+    font-size: clamp(16px, 3vw, 20px);
+    color: var(--text-color);
+    max-width: 1200px;
+}
+
+#ranger {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+#ranger:hover {
+    box-shadow: 0 0 15px var(--primary-color), inset 0 0 15px var(--primary-color);
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .title {
+        font-size: 28px;
+        padding: 10px;
+    }
+    
+    #mensagem {
+        min-height: 120px;
+    }
+}
+
+@media (min-width: 1921px) { /* Para monitores ultrawide */
+    .title,
+    #mensagem,
+    .ranger {
+        max-width: 1800px;
+    }
+    
+    body {
+        padding: 40px;
+    }
+}
